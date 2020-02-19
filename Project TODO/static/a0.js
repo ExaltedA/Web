@@ -18,7 +18,7 @@ function addElement(){
 
   let new_el = document.createElement("li");
   new_el.innerHTML = input.value;
-  if(new_el.innerHTML==="") return;
+  
   box.appendChild(new_el);
   
   input.value = "";
