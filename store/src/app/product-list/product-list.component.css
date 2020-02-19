@@ -1,0 +1,24 @@
+* {box-sizing: border-box;}
+
+.img-magnifier-container {
+  position:relative;
+}
+#tg{
+  left: auto;
+}
+::ng-deep .img-magnifier-glass {
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 100px;
+  height: 100px;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/

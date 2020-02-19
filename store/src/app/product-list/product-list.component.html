@@ -1,0 +1,33 @@
+<h2>Products</h2>
+<div *ngFor="let product of products">
+  <h3>
+
+    <a [title]="product.name + ' details'">
+    {{product.name}}
+    </a>
+
+  </h3>
+
+  <p *ngIf="product.description" >
+    Description: {{product.description}}
+    </p>
+
+
+
+<div class="img-magnifier-container">
+  <img id="myimage" src="{{product.image}}" onclick='magnify(myimage,3)' width="400" height="300" alt="image">
+</div>
+<a href=" https://api.whatsapp.com/send?phone=77088948540&text=aldik.comisgoodstore!!Checkitout!!" target="_blank">
+  <button >Whatsapp</button>
+</a>
+<a id="tg" href="https://telegram.me/share/url?url=aldik.com&text=Check this out" target="_blank" >
+  <button >Telegram</button></a>
+</div>
+
+
+
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
