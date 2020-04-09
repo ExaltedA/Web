@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FeaturedprodComponent} from '../featuredprod/featuredprod.component';
 
 @Component({
   selector: 'app-main',

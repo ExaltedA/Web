@@ -10,11 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { FeaturedprodComponent } from './featuredprod/featuredprod.component';
 
-// @ts-ignore
-// @ts-ignore
-// @ts-ignore
-// @ts-ignore
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +20,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     MainComponent,
     TopBarComponent,
     ProductDetailComponent,
+    FeaturedprodComponent,
   ],
   imports: [
     BrowserModule,

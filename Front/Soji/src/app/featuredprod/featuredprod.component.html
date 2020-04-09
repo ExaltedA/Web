@@ -1,0 +1,10 @@
+<h3> Popular products</h3>
+<div >
+  <a *ngFor="let product of products" routerLink="/detail/{{product.name}}" >
+    <div >
+      <h4>{{product.name}}</h4>
+      <h4>{{product.price}}</h4>
+      <img src="{{product.image}}">
+    </div>
+  </a>
+</div>
