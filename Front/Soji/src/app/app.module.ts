@@ -15,6 +15,8 @@ import { FeaturedprodComponent } from './featuredprod/featuredprod.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { CartComponent } from './cart/cart.component';
 import { DeliveryComponent } from './delivery/delivery.component';
+import { ServiceComponent } from './service/service.component';
+import { ReviewsComponent } from './reviews/reviews.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { DeliveryComponent } from './delivery/delivery.component';
     ProductSearchComponent,
     CartComponent,
     DeliveryComponent,
+    ServiceComponent,
+    ReviewsComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,7 @@
     <img src="{{product.image}}"/>
   </li>
 </ul>
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+<form formGroup="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
 
   <div>
     <label for="name">
