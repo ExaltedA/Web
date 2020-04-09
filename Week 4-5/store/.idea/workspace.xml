@@ -41,7 +41,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="C:\Users\aldie\Documents\store\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\aldie\Documents\Git\Web\Week 4-5\store\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -92,6 +92,7 @@
       <workItem from="1582082094754" duration="875000" />
       <workItem from="1582083527539" duration="125000" />
       <workItem from="1582083745886" duration="69000" />
+      <workItem from="1586456508805" duration="104000" />
     </task>
     <servers />
   </component>
@@ -107,22 +108,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="778" y="11" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1582082868807" />
-    <state width="745" height="210" key="GridCell.Tab.0.bottom" timestamp="1582082969636">
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom" timestamp="1586456612635">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582082969636" />
-    <state width="745" height="210" key="GridCell.Tab.0.center" timestamp="1582082969636">
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586456612635" />
+    <state width="1515" height="208" key="GridCell.Tab.0.center" timestamp="1586456612635">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582082969636" />
-    <state width="745" height="210" key="GridCell.Tab.0.left" timestamp="1582082969636">
+    <state width="1515" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586456612635" />
+    <state width="1515" height="208" key="GridCell.Tab.0.left" timestamp="1586456612635">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582082969636" />
-    <state width="745" height="210" key="GridCell.Tab.0.right" timestamp="1582082969636">
+    <state width="1515" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586456612635" />
+    <state width="1515" height="208" key="GridCell.Tab.0.right" timestamp="1586456612635">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="745" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582082969636" />
+    <state width="1515" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586456612635" />
     <state x="277" y="56" key="SettingsEditor" timestamp="1582083812230">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

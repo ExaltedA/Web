@@ -1,0 +1,28 @@
+<h3>Корзина</h3>
+
+<ul>
+  <li *ngFor="let product of products">
+    <a> {{product.name}} <span>{{product.price | currency:'KZT':'code'}}</span></a>
+    <img src="{{product.image}}"/>
+  </li>
+</ul>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label for="address">
+      Address
+    </label>
+    <input id="address" type="text" formControlName="address">
+  </div>
+
+  <button class="button" type="submit">Purchase</button>
+
+</form>
+

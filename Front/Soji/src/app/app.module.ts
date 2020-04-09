@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,8 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FeaturedprodComponent } from './featuredprod/featuredprod.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
+import { CartComponent } from './cart/cart.component';
+import { DeliveryComponent } from './delivery/delivery.component';
 
 
 @NgModule({
@@ -23,6 +26,8 @@ import { ProductSearchComponent } from './product-search/product-search.componen
     ProductDetailComponent,
     FeaturedprodComponent,
     ProductSearchComponent,
+    CartComponent,
+    DeliveryComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,8 @@ import { ProductSearchComponent } from './product-search/product-search.componen
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

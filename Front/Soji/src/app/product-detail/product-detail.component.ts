@@ -2,8 +2,9 @@ import { Component, OnInit, Input} from '@angular/core';
 import { Product} from '../product';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-
+import { CartService} from '../cart.service';
 import { ProductService} from '../product.service';
+import {toTitleCase} from 'codelyzer/util/utils';
 
 @Component({
   selector: 'app-product-detail',
@@ -14,10 +15,16 @@ export class ProductDetailComponent implements OnInit {
   @Input() product: Product;
   constructor(private route: ActivatedRoute,
               private productService: ProductService,
-              private location: Location) { }
+              private location: Location,
+              private  cartService: CartService,
+) { }
 
   ngOnInit(): void {
     this.getProduct();
+  }
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+    window.alert(product.name + ' has been added to the cart!');
   }
   getProduct(): void {
     const id = +this.route.snapshot.paramMap.get('id');
