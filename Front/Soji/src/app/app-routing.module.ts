@@ -8,6 +8,7 @@ import {CartComponent} from './cart/cart.component';
 import {DeliveryComponent} from './delivery/delivery.component';
 import {ServiceComponent} from './service/service.component';
 import {ReviewsComponent} from './reviews/reviews.component';
+import {LoginComponent} from './login/login.component';
 
 const routes: Routes = [
   { path: 'products', component: ProductsComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'delivery', component: DeliveryComponent},
   {path: 'services', component: ServiceComponent},
   {path: 'reviews', component: ReviewsComponent},
+  {path: 'signin', component: LoginComponent}
 
 ];
 

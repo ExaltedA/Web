@@ -1,0 +1,39 @@
+<h1>Login Page</h1>
+<div>
+
+  <div *ngIf="login == true">
+
+      <div >Войти</div>
+      <div >
+        <div >E-mail</div>
+        <input type="text">
+      </div>
+      <div >
+        <div >Пароль</div>
+        <input type="password">
+      </div>
+      <button>Войти</button>
+      <div  (click)="switchFalse()">Зарегистрироватся</div>
+
+  </div>
+
+  <div *ngIf="login == false">
+    <form>
+      <div>Зарегистрироватся</div>
+      <div>
+        <div>E-mail</div>
+        <input type="text">
+      </div>
+      <div>
+        <div>Пароль</div>
+        <input type="password">
+      </div>
+      <div>
+        <div>Подтвердить пароль</div>
+        <input type="password">
+      </div>
+      <button>Зарегистрироватся</button>
+      <div (click)="switchTrue()">Войти</div>
+    </form>
+  </div>
+</div>

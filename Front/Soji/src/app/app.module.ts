@@ -17,6 +17,7 @@ import { CartComponent } from './cart/cart.component';
 import { DeliveryComponent } from './delivery/delivery.component';
 import { ServiceComponent } from './service/service.component';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { ReviewsComponent } from './reviews/reviews.component';
     DeliveryComponent,
     ServiceComponent,
     ReviewsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
