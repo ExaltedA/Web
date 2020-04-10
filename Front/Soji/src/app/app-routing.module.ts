@@ -9,6 +9,7 @@ import {DeliveryComponent} from './delivery/delivery.component';
 import {ServiceComponent} from './service/service.component';
 import {ReviewsComponent} from './reviews/reviews.component';
 import {LoginComponent} from './login/login.component';
+import {AccountComponent} from './account/account.component';
 
 const routes: Routes = [
   { path: 'products', component: ProductsComponent },
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'delivery', component: DeliveryComponent},
   {path: 'services', component: ServiceComponent},
   {path: 'reviews', component: ReviewsComponent},
-  {path: 'signin', component: LoginComponent}
+  {path: 'signin', component: LoginComponent},
+  {path: 'account', component: AccountComponent}
 
 ];
 

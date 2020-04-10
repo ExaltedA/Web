@@ -25,7 +25,10 @@ export class InMemoryDataService implements InMemoryDbService {
       {name: 'Aldiyar', date: '01/01/2005 3:30', text: 'Very Astounding technology, AND WEBSITE IS FREAKING GOOD!'},
       {name: 'Damir', date: '03/04/2007 3:30', text: 'I don\'t know about cleaners but website is THE BEST'}
     ];
-    return {products, reviews};
+    const users = [
+      {name: 'Aldiyar', username: 'aldie', password: 'fsociety1', surname: 'Yessenturov', city: 'Kokshetau'}
+    ];
+    return {products, reviews, users};
   }
 
   constructor() { }

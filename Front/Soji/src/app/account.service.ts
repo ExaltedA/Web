@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Review} from './review';
+import {User} from './user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -8,12 +8,12 @@ import { catchError, map, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class ReviewsService {
-  private reviewUrl = 'api/reviews';
+export class AccountService {
+  private userUrl = 'api/users';
   constructor( private http: HttpClient) { }
-  getReviews(): Observable<Review[]> {
-    return this.http.get<Review[]>(this.reviewUrl)
-      .pipe(catchError(this.handleError<Review[]>('getReviews', []))
+  getInfo(): Observable<User[]> {
+    return this.http.get<User[]>(this.userUrl)
+      .pipe(catchError(this.handleError<User[]>('getInfo', []))
       );
   }
   private handleError<T>(operation = 'operation', result?: T) {

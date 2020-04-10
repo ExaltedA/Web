@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
-
+import {FormsModule} from '@angular/forms';
 import { AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
@@ -18,6 +18,7 @@ import { DeliveryComponent } from './delivery/delivery.component';
 import { ServiceComponent } from './service/service.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { LoginComponent } from './login/login.component';
+import { AccountComponent } from './account/account.component';
 
 
 @NgModule({
@@ -34,8 +35,9 @@ import { LoginComponent } from './login/login.component';
     ServiceComponent,
     ReviewsComponent,
     LoginComponent,
+    AccountComponent,
   ],
-  imports: [
+  imports: [ FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

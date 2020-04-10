@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Review} from '../review';
 import {ReviewsService} from '../reviews.service';
-import {Product} from '../product';
+
 
 @Component({
   selector: 'app-reviews',
@@ -10,6 +10,7 @@ import {Product} from '../product';
 })
 export class ReviewsComponent implements OnInit {
   reviews: Review[];
+  review: Review;
   constructor(private reviewsService: ReviewsService) { }
 
   ngOnInit(): void {

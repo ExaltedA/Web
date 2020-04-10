@@ -2,4 +2,6 @@ export interface User {
   name: string;
   username: string;
   password: string;
+  surname?: string;
+  city?: string;
 }

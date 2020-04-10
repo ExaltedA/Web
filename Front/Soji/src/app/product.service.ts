@@ -30,7 +30,7 @@ export class ProductService {
   getProduct(id: number): Observable<Product> {
     const url = `${this.productUrl}/${id}`;
     return this.http.get<Product>(url).pipe(
-      catchError(this.handleError<Product>(`getHero id=${id}`))
+      catchError(this.handleError<Product>(`getProduct id=${id}`))
     );
   }
   /* GET heroes whose name contains search term */
@@ -40,7 +40,7 @@ export class ProductService {
       return of([]);
     }
     return this.http.get<Product[]>(`${this.productUrl}/?name=${term}`).pipe(
-      catchError(this.handleError<Product[]>('searchHeroes', []))
+      catchError(this.handleError<Product[]>('searchProducts', []))
     );
   }
 }
