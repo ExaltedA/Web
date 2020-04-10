@@ -1,10 +1,11 @@
-<h3> Popular products</h3>
+<h3 class= "popprod "> Popular products</h3>
 <div >
-  <a *ngFor="let product of products" routerLink="/detail/{{product.id}}" >
-    <div >
-      <h4>{{product.name}}</h4>
-      <h4>{{product.price | currency:'KZT':'code'}} </h4>
-      <img src="{{product.image}}">
+  <a  *ngFor="let product of products" routerLink="/detail/{{product.id}}" >
+    <div  >
+      <img class="prod" src="{{product.image}}" width="220" height="220">
+      <h4 class="prod" class="nameofprod">{{product.name}}</h4>
+      <h4 class="prod" class="priceofprod">{{product.price | currency:'KZT':'code'}} </h4>
+
     </div>
   </a>
 </div>

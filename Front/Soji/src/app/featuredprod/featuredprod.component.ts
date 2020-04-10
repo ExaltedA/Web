@@ -16,6 +16,6 @@ export class FeaturedprodComponent implements OnInit {
   this.getProducts();
   }
   getProducts(): void {
-    this.productService.getProducts().subscribe(products => this.products = products.slice(0, 4));
+    this.productService.getProducts().subscribe(products => this.products = products.slice(0, 5));
   }
 }

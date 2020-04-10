@@ -3,7 +3,7 @@
 <ul>
   <li *ngFor="let product of products">
     <a> {{product.name}} <span>{{product.price | currency:'KZT':'code'}}</span></a>
-    <img src="{{product.image}}"/>
+    <img src="{{product.image}}" width=300 height=300/>
   </li>
 </ul>
 <form formGroup="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
