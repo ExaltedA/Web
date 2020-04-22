@@ -2,7 +2,7 @@
 <div>
 
   <div *ngIf="login == true">
-
+    <form>
       <div ><h2>Войти</h2></div>
       <div >
         <div >E-mail</div>
@@ -14,11 +14,11 @@
       </div>
       <button>Войти</button>
       <div  (click)="switchFalse()">Зарегистрироватся</div>
-
+    </form>
   </div>
 
   <div *ngIf="login == false">
-
+  <form>
       <div><h2>Зарегистрироватся</h2></div>
       <div>
         <div>E-mail</div>
@@ -34,6 +34,6 @@
       </div>
       <button>Зарегистрироватся</button>
       <div (click)="switchTrue()">Войти</div>
-
+    </form>
   </div>
 </div>

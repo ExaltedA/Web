@@ -66,8 +66,7 @@ def sort_salary(vacant):
 def vacancies_top(request):
     vacancies = Vacancy.objects.all().order_by('-salary')[:10]
     vacant_json = [vacancy.to_json() for vacancy in vacancies]
-    return JsonResponse(vacant_json, safe=False)
-    # if vacant_json:
-    #     return JsonResponse(vacant_json, safe=False)
-    # else:
-    #     return JsonResponse("No vacancy available, check for updates later!", safe=False)
+    if vacant_json:
+        return JsonResponse(vacant_json, safe=False)
+    else:
+        return JsonResponse("No vacancy available, check for updates later!", safe=False)

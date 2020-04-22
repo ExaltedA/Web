@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CartService} from '../cart.service';
 import { ProductService} from '../product.service';
-import {toTitleCase} from 'codelyzer/util/utils';
+
 
 @Component({
   selector: 'app-product-detail',

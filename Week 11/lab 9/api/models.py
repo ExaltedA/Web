@@ -7,6 +7,10 @@ class Company(models.Model):
     city = models.CharField(max_length=30)
     address = models.TextField()
 
+    class Meta:
+        verbose_name = 'Company'
+        verbose_name_plural = 'Companies'
+
     def to_json(self):
         return {
             'id': self.id,
