@@ -1,10 +1,11 @@
 from rest_framework import serializers
 from api.models import Company, Vacancy
+from django.contrib.auth.models import User
 
 
 class CompanySerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
-    name = serializers.CharField()
+    name = serializers.CharField(required=True)
     description = serializers.CharField()
     city = serializers.CharField()
     address = serializers.CharField()
@@ -28,17 +29,36 @@ class CompanySerializer(serializers.Serializer):
 class CompanySerializer2(serializers.ModelSerializer):
     class Meta:
         model = Company
-        fields = ('id', 'name', 'description', 'city', 'address')
+        fields = '__all__'
 
 
-class VacancySerializer(serializers.ModelSerializer):
-    # Nested Serializers
-    # company = CompanySerializer2(read_only=True)
-    company_id = serializers.IntegerField(write_only=True)
+class VacancySerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
+    name = serializers.CharField(required=True)
+    description = serializers.CharField()
+    salary = serializers.CharField()
+    company = CompanySerializer()
 
+    def create(self, validated_data):
+        vacancy = Vacancy.objects.create(name=validated_data.get('name'),
+                                         description=validated_data.get('description'),
+                                         salary=validated_data.get('salary'),
+                                         company=validated_data.get('company'))
+        return vacancy
+
+    def update(self, instance, validated_data):
+        instance.name = validated_data.get('name', instance.name)
+        instance.description = validated_data.get('description', instance.desciption)
+        instance.salary = validated_data.get('salary', instance.salary)
+        instance.company = validated_data.get('company', instance.city)
+        instance.save()
+        return instance
+
+
+class VacancySerializer2(serializers.ModelSerializer):
     class Meta:
         model = Vacancy
-        fields = ('id', 'name', 'description', 'salary', 'company_id',)
+        fields = '__all__'
 
 
 class CompanyWithVacanciesSerializer(serializers.ModelSerializer):

@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from api.models import Company, Vacancy
 
-from api.serializers import CompanySerializer2, VacancySerializer, CompanyWithVacanciesSerializer
+from api.serializers import CompanySerializer2, VacancySerializer
 
 
 class CompanyListAPIView(generics.ListCreateAPIView):
