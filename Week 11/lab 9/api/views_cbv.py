@@ -67,20 +67,20 @@ class VacanciesDetail(APIView):
         except Vacancy.DoesNotExist:
             raise Http404
 
-    def get(self, request, pk):
-        vacancy = self.get_object(pk)
+    def get(self, request, vacant_id):
+        vacancy = self.get_object(vacant_id)
         serializer = VacancySerializer2(vacancy)
         return Response(serializer.data)
 
-    def put(self, request, pk):
-        vacancy = self.get_object(pk)
+    def put(self, request, vacant_id):
+        vacancy = self.get_object(vacant_id)
         serializer = VacancySerializer2(instance=vacancy, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
 
-    def delete(self, request, pk):
-        vacancy = self.get_object(pk)
+    def delete(self, request, vacant_id):
+        vacancy = self.get_object(vacant_id)
         vacancy.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
