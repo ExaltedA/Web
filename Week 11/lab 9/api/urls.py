@@ -1,6 +1,8 @@
 from django.urls import path
 # from api.views import *
 from rest_framework_jwt.views import obtain_jwt_token
+
+from api.views import hello, vacancies_top
 from api.views_generic import *
 from api.views_fbv import *
 from api.views_cbv import *
@@ -16,12 +18,13 @@ from api.views_cbv import *
 #     # path('vacancies/top_ten/', vacancies_top)
 # ]
 urlpatterns = [
+    path('', hello),
     path('login/', obtain_jwt_token),
     path('vacancies/', VacanciesList.as_view()),
     path('vacancies/<int:vacant_id>/', VacanciesDetail.as_view()),
     path('companies/', CompaniesList.as_view()),
     path('companies/<int:comp_id>/', CompaniesDetail.as_view()),
-    # path('vacancies/top_ten/', top_ten_vacancies)
+    path('vacancies/top_ten/', vacancies_top)
 ]
 
 # urlpatterns = [

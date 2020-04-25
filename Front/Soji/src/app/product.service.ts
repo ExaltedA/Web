@@ -3,15 +3,17 @@ import { Product} from './product';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import {LoginResponse} from './login-response';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private productUrl = 'api/products';
+  private BASE_URL = 'http://localhost:8000';
   constructor( private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.productUrl)
+    return this.http.get<Product[]>(`${this.BASE_URL}/api/products/`)
       .pipe(catchError(this.handleError<Product[]>('getHeroes', []))
     );
   }
@@ -28,7 +30,7 @@ export class ProductService {
     };
   }
   getProduct(id: number): Observable<Product> {
-    const url = `${this.productUrl}/${id}`;
+    const url = `$api/products/${id}`;
     return this.http.get<Product>(url).pipe(
       catchError(this.handleError<Product>(`getProduct id=${id}`))
     );
@@ -39,8 +41,14 @@ export class ProductService {
       // if not search term, return empty hero array.
       return of([]);
     }
-    return this.http.get<Product[]>(`${this.productUrl}/?name=${term}`).pipe(
+    return this.http.get<Product[]>(`$api/products/?name=${term}`).pipe(
       catchError(this.handleError<Product[]>('searchProducts', []))
     );
+  }
+  login(username, password): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>(`${this.BASE_URL}/api/login/`, {
+      username,
+      password
+    });
   }
 }
