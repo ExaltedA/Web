@@ -13,3 +13,7 @@ class CommentSerializer(serializers.Serializer):
     content = serializers.CharField(max_length=200)
     created = serializers.DateTimeField()
 
+class ProductSerializer2(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = '__all__'

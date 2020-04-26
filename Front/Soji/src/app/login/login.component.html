@@ -1,7 +1,7 @@
 <h1>Login Page</h1>
 <div>
 
-  <div *ngIf="login == true">
+  <div *ngIf="loginq == true">
     <h1>Login form</h1>
     <p>Username: <input type="text" [(ngModel)]="username"></p>
     <p>Password: <input type="text" [(ngModel)]="password"></p>
@@ -16,23 +16,23 @@
   </div>
   </div>
 
-  <div *ngIf="login == false">
-  <form>
-      <div><h2>Зарегистрироватся</h2></div>
-      <div>
-        <div>E-mail</div>
-        <input type="text">
-      </div>
-      <div>
-        <div>Пароль</div>
-        <input type="password">
-      </div>
-      <div>
-        <div>Подтвердить пароль</div>
-        <input type="password">
-      </div>
-      <button>Зарегистрироватся</button>
-      <div (click)="switchTrue()">Войти</div>
-    </form>
-  </div>
-</div>
+<!--  <div *ngIf="loginq == false">-->
+<!--  <form>-->
+<!--      <div><h2>Зарегистрироватся</h2></div>-->
+<!--      <div>-->
+<!--        <div>E-mail</div>-->
+<!--        <input type="text">-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <div>Пароль</div>-->
+<!--        <input type="password">-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <div>Подтвердить пароль</div>-->
+<!--        <input type="password">-->
+<!--      </div>-->
+<!--      <button>Зарегистрироватся</button>-->
+<!--      <div (click)="switchTrue()">Войти</div>-->
+<!--    </form>-->
+<!--  </div>-->
+

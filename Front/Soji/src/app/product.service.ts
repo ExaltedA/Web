@@ -13,8 +13,8 @@ export class ProductService {
   constructor( private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.BASE_URL}/api/products/`)
-      .pipe(catchError(this.handleError<Product[]>('getHeroes', []))
+    return this.http.get<Product[]>(`${this.BASE_URL}/core/products/`)
+      .pipe(catchError(this.handleError<Product[]>('getProducts', []))
     );
   }
   private handleError<T>(operation = 'operation', result?: T) {
@@ -46,7 +46,7 @@ export class ProductService {
     );
   }
   login(username, password): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(`${this.BASE_URL}/api/login/`, {
+    return this.http.post<LoginResponse>(`${this.BASE_URL}/core/login/`, {
       username,
       password
     });
