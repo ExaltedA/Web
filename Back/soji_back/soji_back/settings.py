@@ -35,14 +35,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'djoser',
-    'filters',
+    'corsheaders',
     'rest_framework',
     'rest_framework_jwt',
     'core'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,3 +131,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     ),
 }
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:8000",
+    "http://localhost:4200",
+    "http://127.0.0.1:8000"
+]

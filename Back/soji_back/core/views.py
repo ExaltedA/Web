@@ -1,2 +1,2 @@
 from django.shortcuts import render
-from core.models import Product
+from core.models import *

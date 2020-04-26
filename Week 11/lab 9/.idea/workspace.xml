@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a708af35-c707-496e-97e0-323ca72ee9aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Back/soji_back/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Back/soji_back/core/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Back/soji_back/core/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Back/soji_back/core/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Back/soji_back/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Back/soji_back/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Back/soji_back/core/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Back/soji_back/core/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Back/soji_back/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Back/soji_back/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Back/soji_back/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../../Back/soji_back/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Back/soji_back/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Back/soji_back/core/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Back/soji_back/soji_back/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Back/soji_back/soji_back/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Back/soji_back/soji_back/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Back/soji_back/soji_back/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Front/Soji/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Front/Soji/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +138,7 @@
       <workItem from="1587816728410" duration="2521000" />
       <workItem from="1587826273921" duration="1895000" />
       <workItem from="1587837152216" duration="1656000" />
-      <workItem from="1587892402410" duration="7368000" />
+      <workItem from="1587892402410" duration="7610000" />
     </task>
     <servers />
   </component>
