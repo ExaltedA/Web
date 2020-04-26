@@ -10,7 +10,8 @@ import {Product} from '../product';
 })
 export class AccountComponent implements OnInit {
   @Input() user: User;
-  usera:User = {name: 'Aldik', surname: 'Yessenturov', city: 'Kokshetau', password: 'fsociety2', username: 'hi'}
+  // @ts-ignore
+  usera: User = {name: 'Aldik', surname: 'Yessenturov', city: 'Kokshetau', password: 'fsociety2', username: 'hi'}
 
   constructor(private accountService: AccountService) { }
   ngOnInit(): void {

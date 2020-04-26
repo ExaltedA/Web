@@ -9,7 +9,7 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AccountService {
-  private userUrl = 'api/users';
+  private userUrl = 'core/users';
   constructor( private http: HttpClient) { }
   getInfo(): Observable<User[]> {
     return this.http.get<User[]>(this.userUrl)

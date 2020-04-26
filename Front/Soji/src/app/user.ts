@@ -1,7 +1,7 @@
 export interface User {
-  name: string;
+  firstname: string;
   username: string;
   password: string;
-  surname?: string;
-  city?: string;
+  lastname: string;
+  email: string;
 }

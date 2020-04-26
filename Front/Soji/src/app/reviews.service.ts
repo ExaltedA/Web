@@ -9,10 +9,10 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ReviewsService {
-  private reviewUrl = 'api/reviews';
+  private BASE_URL = 'http://localhost:8000';
   constructor( private http: HttpClient) { }
   getReviews(): Observable<Review[]> {
-    return this.http.get<Review[]>(this.reviewUrl)
+    return this.http.get<Review[]>(`${this.BASE_URL}/core/reviews/`)
       .pipe(catchError(this.handleError<Review[]>('getReviews', []))
       );
   }

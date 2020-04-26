@@ -8,8 +8,6 @@ import { ProductsComponent } from './products/products.component';
 import { MainComponent } from './main/main.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FeaturedprodComponent } from './featuredprod/featuredprod.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
@@ -42,9 +40,6 @@ import {AuthInterceptor} from "./auth.interceptor";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
     ReactiveFormsModule
   ],
   providers: [

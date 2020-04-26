@@ -23,7 +23,7 @@ export class CompanyService {
   }
 
   login(username, password): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(`${this.BASE_URL}/api/login/`, {
+    return this.http.post<LoginResponse>(`${this.BASE_URL}/core/login/`, {
       username,
       password
     });

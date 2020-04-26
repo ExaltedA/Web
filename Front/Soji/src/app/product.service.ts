@@ -4,11 +4,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import {LoginResponse} from './login-response';
+import {User} from './user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+  username:string;
+  logged = false;
   private BASE_URL = 'http://localhost:8000';
   constructor( private http: HttpClient) { }
 
@@ -30,8 +33,7 @@ export class ProductService {
     };
   }
   getProduct(id: number): Observable<Product> {
-    const url = `$api/products/${id}`;
-    return this.http.get<Product>(url).pipe(
+    return this.http.get<Product>(`${this.BASE_URL}/core/products/${id}`).pipe(
       catchError(this.handleError<Product>(`getProduct id=${id}`))
     );
   }
@@ -46,9 +48,13 @@ export class ProductService {
     );
   }
   login(username, password): Observable<LoginResponse> {
+    this.username = username;
     return this.http.post<LoginResponse>(`${this.BASE_URL}/core/login/`, {
       username,
       password
     });
   }
-}
+  }
+
+
+

@@ -6,6 +6,7 @@ import { CartService} from '../cart.service';
 import { ProductService} from '../product.service';
 
 
+
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -16,16 +17,12 @@ export class ProductDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private productService: ProductService,
               private location: Location,
-              private  cartService: CartService,
+              private cartService: CartService
 ) { }
-
   ngOnInit(): void {
     this.getProduct();
   }
-  addToCart(product: Product) {
-    this.cartService.addToCart(product);
-    window.alert(product.name + ' has been added to the cart!');
-  }
+  c
   getProduct(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.productService.getProduct(id)
@@ -34,4 +31,7 @@ export class ProductDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+  addToCart(product: Product): void {
+    this.cartService.addToCart(product);
+}
 }

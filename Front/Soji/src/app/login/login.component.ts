@@ -8,15 +8,8 @@ import {ProductService} from '../product.service';
 })
 export class LoginComponent implements OnInit {
   title = 'servicesGroup2';
-  public loginq = true;
   constructor(private productService: ProductService ) { }
 
-  switchTrue() {
-    this.loginq = true;
-  }
-  switchFalse() {
-    this.loginq = false;
-  }
 
   logged = false;
 
@@ -28,6 +21,7 @@ export class LoginComponent implements OnInit {
     let token = localStorage.getItem('token');
     if (token){
       this.logged = true;
+      this.productService.username = this.username;
     }
   }
 
@@ -39,8 +33,8 @@ export class LoginComponent implements OnInit {
 
         this.logged = true;
 
-        this.username = '';
-        this.password = '';
+        // this.username = '';
+        // this.password = '';
       })
   }
 
