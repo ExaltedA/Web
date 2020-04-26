@@ -17,16 +17,7 @@ export class CartService {
   getProducts() {
     return this.products;
   }
-  submitForm(form) {
-    const formData: any = new FormData();
-    formData.append('name', form.get('name').value);
-    formData.append('address', form.get('address').value);
 
-    this.http.post('api/submit-order', formData).subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
-    );
-  }
   clearCart() {
     this.products = [];
     return this.products;

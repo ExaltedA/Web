@@ -11,7 +11,7 @@
   <a routerLink="/services">Soji Service Center</a>
   <a routerLink="/reviews">Reviews</a>
   <a routerLink="/cart"> Cart </a>
-  <div *ngIf="logged==false"><a routerLink="/signin">Log In </a></div>
+  <a (click)="getUsername()" routerLink="/signin">{{current}} </a>
 
 </nav>
 

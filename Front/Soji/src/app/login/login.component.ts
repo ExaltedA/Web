@@ -41,5 +41,6 @@ export class LoginComponent implements OnInit {
   logout(){
     localStorage.clear();
     this.logged = false;
+    this.productService.username = '';
   }
 }

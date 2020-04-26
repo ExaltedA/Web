@@ -3,7 +3,7 @@ from core.serializers import *
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, generics
 from django.http import Http404
 from rest_framework.permissions import IsAuthenticated
 
@@ -21,6 +21,12 @@ class ProductsList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class CompanyListAPIView(generics.ListCreateAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    permission_classes = (IsAuthenticated,)
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
@@ -46,7 +52,6 @@ def product_detail(request, comp_id):
         return Response({'deleted': True})
 
 
-
 @api_view(['GET', 'POST'])
 def reviews_list(request):
     if request.method == 'GET':
@@ -61,5 +66,3 @@ def reviews_list(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response({'error': serializer.errors},
                         status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-

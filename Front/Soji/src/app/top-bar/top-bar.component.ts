@@ -10,7 +10,7 @@ export class TopBarComponent implements OnInit {
   logged = false;
   userName: string;
   constructor(private productService: ProductService) { }
-
+  current = 'Log in'
 
   ngOnInit(): void {
     this.getUsername()
@@ -19,6 +19,13 @@ export class TopBarComponent implements OnInit {
     this.userName =this.productService.username;
    if(this.userName){
      this.logged = true;
+     this.current = this.userName;
+   }
+   else {
+     this.logged = false;
+     this.current = 'Log in';
+
    }
   }
+
 }
