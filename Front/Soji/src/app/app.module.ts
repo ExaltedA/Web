@@ -17,37 +17,38 @@ import { ServiceComponent } from './service/service.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { LoginComponent } from './login/login.component';
 import { AccountComponent } from './account/account.component';
-import {HTTP_INTERCEPTORS} from "@angular/common/http";
-import {AuthInterceptor} from "./auth.interceptor";
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {AuthInterceptor} from './auth.interceptor';
+import { ViewOrderComponent } from './viewOrder/viewOrder.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProductsComponent,
-    MainComponent,
-    TopBarComponent,
-    ProductDetailComponent,
-    FeaturedprodComponent,
-    ProductSearchComponent,
-    CartComponent,
-    DeliveryComponent,
-    ServiceComponent,
-    ReviewsComponent,
-    LoginComponent,
-    AccountComponent,
-  ],
-  imports: [ FormsModule,
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule
-  ],
-  providers: [
-    {
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptor,
-    multi: true
-  }],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      ProductsComponent,
+      MainComponent,
+      TopBarComponent,
+      ProductDetailComponent,
+      FeaturedprodComponent,
+      ProductSearchComponent,
+      CartComponent,
+      DeliveryComponent,
+      ServiceComponent,
+      ReviewsComponent,
+      LoginComponent,
+      AccountComponent,
+      ViewOrderComponent
+   ],
+   imports: [
+      FormsModule,
+      BrowserModule,
+      AppRoutingModule,
+      HttpClientModule,
+      ReactiveFormsModule
+   ],
+   providers: [
+   ],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }

@@ -4,16 +4,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import {LoginResponse} from './login-response';
-import {User} from './user';
+import {User, UserId,UserReg} from './user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  username:string;
-  logged = false;
-  private BASE_URL = 'http://localhost:8000';
+  private BASE_URL = 'http://127.0.0.1:8000';
   constructor( private http: HttpClient) { }
+
+  registerNewUser(username,password):Observable<UserReg>{
+    return this.http.post<UserReg>(`${this.BASE_URL}/core/users/`,{username,password});
+  }
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.BASE_URL}/core/products/`)
@@ -48,11 +50,15 @@ export class ProductService {
     );
   }
   login(username, password): Observable<LoginResponse> {
-    this.username = username;
-    return this.http.post<LoginResponse>(`${this.BASE_URL}/core/login/`, {
+    return this.http.post<LoginResponse>(`${this.BASE_URL}/core/auth/`, {
       username,
       password
     });
+
+  }
+
+  getUserId(username):Observable<UserId>{
+    return this.http.get<UserId>(`http://127.0.0.1:8000/core/users/${username}/`);
   }
   }
 

@@ -10,28 +10,33 @@ import {Order} from '../order';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  products: Product[];
-  checkoutForm;
-  constructor( private cartService: CartService,
-               private formBuilder: FormBuilder) {
-    this.checkoutForm = this.formBuilder.group({
-      name: '',
-      address: ''
-    });
-  }
+  items: Product[] = [];
+  productId: number[] = [];
+  note: string;
+
+  constructor( private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.getProducts();
+    this.items = this.cartService.getItems();
   }
-  getProducts(): void {
-    this.products = this.cartService.getProducts();
+
+  getProductIdes(): number[]{
+    for (let i in this.items){
+      this.productId.push(this.items[i].id);
+    }
+    return this.productId;
   }
-  onSubmit(customerData) {
-    this.products = this.cartService.clearCart();
-    this.checkoutForm.reset();
 
-    this.cartService.submitForm(customerData);
-
-    console.warn('Your order has been submitted', customerData);
+  onSubmit(note: string) {
+    let check = localStorage.getItem('token');
+    if(check != null){
+        console.log(this.getProductIdes());
+        this.cartService.createOrder(parseInt(localStorage.getItem('userId')), this.getProductIdes(), note).subscribe();
+        alert('You order is received');
+        this.items.length = 0;
+    }
+    else{
+      window.alert('Make a authorization');
+    }
   }
 }

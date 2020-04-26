@@ -16,7 +16,7 @@ export class TopBarComponent implements OnInit {
     this.getUsername()
   }
   getUsername(): void{
-    this.userName =this.productService.username;
+    this.userName = localStorage.getItem('username');
    if(this.userName){
      this.logged = true;
      this.current = this.userName;

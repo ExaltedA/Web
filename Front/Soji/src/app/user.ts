@@ -5,3 +5,13 @@ export interface User {
   lastname: string;
   email: string;
 }
+
+export class UserId{
+  id:number;
+}
+
+export class UserReg{
+  id:number;
+  username:string;
+  password:string;
+}

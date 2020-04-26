@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
   title = 'servicesGroup2';
   constructor(private productService: ProductService ) { }
 
-
+  storedLogin:string;
   logged = false;
 
   username = '';
@@ -21,26 +21,29 @@ export class LoginComponent implements OnInit {
     let token = localStorage.getItem('token');
     if (token){
       this.logged = true;
-      this.productService.username = this.username;
+      this.storedLogin = localStorage.getItem('username');
     }
   }
 
   login(){
     this.productService.login(this.username, this.password)
       .subscribe(res => {
-
         localStorage.setItem('token', res.token);
-
+        this.productService.getUserId(this.username).subscribe(id=>
+          {
+            localStorage.setItem('userId', id.id.toString());
+            localStorage.setItem('username',this.username);
+          }
+          );
         this.logged = true;
 
-        // this.username = '';
-        // this.password = '';
+        this.username = '';
+        this.password = '';
       })
   }
 
   logout(){
-    localStorage.clear();
+      localStorage.clear();
     this.logged = false;
-    this.productService.username = '';
   }
 }

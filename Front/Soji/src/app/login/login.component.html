@@ -6,11 +6,11 @@
     <p>Password: <input type="text" [(ngModel)]="password"></p>
 
     <button (click)="login()">Login</button>
+    <button (click)="login()" routerLink="/account">Registraion</button>
   </div>
 
   <div class="wrapper" *ngIf="logged">
-    Hello {{username}}!<br>
-    <a routerLink="/account">Proceed to account</a>
+   You are logged<br>
   </div>
 
   <div *ngIf="logged == true"><button (click)="logout()">Logout</button></div>

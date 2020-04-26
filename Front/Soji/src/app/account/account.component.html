@@ -1,20 +1,13 @@
-<h1>Account</h1>
+  <h1>Register new Account</h1>
 <label>name:
-  <input [(ngModel)]="usera.lastname" placeholder="lastname"/>
-</label>
-<label>Surname:
-  <input [(ngModel)]="usera.firstname" placeholder="firstname"/>
-</label>
-<label>City:
-  <input [(ngModel)]="usera.email" placeholder="email"/>
+  <input [(ngModel)]="usera.username" placeholder="username"/>
 </label>
 <label>password:
   <input [(ngModel)]="usera.password" placeholder="password"/>
 </label>
-
-<h1>Orders</h1>
-<ul class="rew">
-  <li *ngFor="let order of orders">
-    <h3>{{order.name}},  {{order.product}}</h3>
-  </li>
-</ul>
+<label>Confirm password:
+  <input [(ngModel)]="confirmPassword" placeholder="password"/>
+</label>
+<label>
+<button (click)="register()" style="width: 100px;height: 30px; margin: 40px;">Registration</button>
+</label>

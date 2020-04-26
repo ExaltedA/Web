@@ -13,7 +13,8 @@ import { ProductService} from '../product.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  @Input() product: Product;
+  product: Product;
+
   constructor(private route: ActivatedRoute,
               private productService: ProductService,
               private location: Location,
@@ -22,7 +23,7 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getProduct();
   }
-  c
+
   getProduct(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.productService.getProduct(id)
@@ -31,7 +32,7 @@ export class ProductDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-  addToCart(product: Product): void {
+  addToCart(product): void {
     this.cartService.addToCart(product);
 }
 }

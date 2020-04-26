@@ -4,6 +4,8 @@ import { AccountService} from '../account.service';
 import {Product} from '../product';
 import {Order} from '../order';
 import {ReviewsService} from '../reviews.service';
+import  {ProductService} from '../product.service'; 
+import {Location} from '@angular/common'
 
 @Component({
   selector: 'app-account',
@@ -11,19 +13,30 @@ import {ReviewsService} from '../reviews.service';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
-  @Input() user: User;
-  // @ts-ignore
-  usera: User = {name: 'Aldik', surname: 'Yessenturov', city: 'Kokshetau', password: 'fsociety2', username: 'hi'}
-
-  orders: Order[];
-  order: Order;
-  constructor(private reviewsService: ReviewsService) { }
+ 
+  confirmPassword;
+  usera;
+  constructor(private productService: ProductService, private location: Location ) { }
 
   ngOnInit(): void {
-    this.getOrders();
+    this.usera = {
+      username:'',
+      password:''
   }
-  getOrders(): void {
-    this.reviewsService.getOrders().subscribe(orders => this.orders = orders);
+  this.confirmPassword='';
+  }
+  register(){
+    if(this.confirmPassword==this.usera.password){
+      this.productService.registerNewUser(this.usera.username,this.usera.password).subscribe(
+        responce=>{
+          alert('User '+this.usera.username+' has been created')
+          this.location.back();
+        },
+        error => alert('User name exists')
+    );
+    }
+    else
+    alert('Passwords are not same');
   }
 }
 

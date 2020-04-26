@@ -1,3 +1,4 @@
+import { ViewOrderComponent } from './viewOrder/viewOrder.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsComponent} from './products/products.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'services', component: ServiceComponent},
   {path: 'reviews', component: ReviewsComponent},
   {path: 'signin', component: LoginComponent},
-  {path: 'account', component: AccountComponent}
+  {path: 'account', component: AccountComponent},
+  {path: 'vieworders', component: ViewOrderComponent}
 
 ];
 

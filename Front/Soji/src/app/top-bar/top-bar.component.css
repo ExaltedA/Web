@@ -10,8 +10,6 @@ nav{
   font-style: normal;
   font-weight: 400;
   cursor: pointer;
-
-
 }
 .box{
   font-family: 'Roboto';
@@ -22,5 +20,9 @@ nav{
   color: grey;
   float: left;
   margin:10px;
+}
+
+a{
+  margin: 10px;
 }
 
