@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductService} from '../product.service';
 
 @Component({
   selector: 'app-login',
@@ -6,15 +7,45 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public login = true;
-  constructor() { }
+  title = 'servicesGroup2';
+  public loginq = true;
+  constructor(private productService: ProductService ) { }
 
-  ngOnInit(): void {
-  }
   switchTrue() {
-    this.login = true;
+    this.loginq = true;
   }
   switchFalse() {
-    this.login = false;
+    this.loginq = false;
+  }
+
+  logged = false;
+
+  username = '';
+  password = '';
+
+
+  ngOnInit(){
+    let token = localStorage.getItem('token');
+    if (token){
+      this.logged = true;
+    }
+  }
+
+  login(){
+    this.productService.login(this.username, this.password)
+      .subscribe(res => {
+
+        localStorage.setItem('token', res.token);
+
+        this.logged = true;
+
+        this.username = '';
+        this.password = '';
+      })
+  }
+
+  logout(){
+    localStorage.clear();
+    this.logged = false;
   }
 }

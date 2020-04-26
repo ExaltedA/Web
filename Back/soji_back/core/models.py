@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from datetime import *
+
 from soji_back import settings
 
 
@@ -32,7 +33,7 @@ class Product(models.Model):
 
 
 class Review(models.Model):
-    username = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    username = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True, blank=True)
     text = models.CharField(max_length=300)
 
@@ -40,6 +41,22 @@ class Review(models.Model):
         return {
             'id': self.id,
             'username': self.username.__str__(),
-            'text': self.text,
-            'date': self.date
+            'text': self.text
         }
+
+
+class Order(models.Model):
+    STATUS = (
+        ('Pending', 'Pending'),
+        ('Out for delivery', 'Out for delivery'),
+        ('Delivered', 'Delivered'),
+    )
+
+    customer = models.ForeignKey(CustomUser, null=True, on_delete=models.SET_NULL)
+    product = models.ForeignKey(Product, null=True, on_delete=models.SET_NULL)
+    date_created = models.DateTimeField(auto_now_add=True, null=True)
+    status = models.CharField(max_length=200, null=True, choices=STATUS)
+    note = models.CharField(max_length=1000, null=True)
+
+    def __str__(self):
+        return self.product.name
