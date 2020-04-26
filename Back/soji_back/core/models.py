@@ -1,12 +1,11 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from datetime import *
+from soji_back import settings
 
 
 class CustomUser(AbstractUser):
-    pass
-
-    # add additional fields in here
 
     def __str__(self):
         return self.username
@@ -33,15 +32,14 @@ class Product(models.Model):
 
 
 class Review(models.Model):
-    username = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    date = models.DateField()
+    username = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now_add=True, blank=True)
     text = models.CharField(max_length=300)
 
     def to_json(self):
         return {
             'id': self.id,
-            'name': self.name,
-            'description': self.description,
-            'salary': self.salary,
-            'company': self.company_id
+            'username': self.username.__str__(),
+            'text': self.text,
+            'date': self.date
         }
