@@ -11,3 +11,10 @@
 <label>password:
   <input [(ngModel)]="usera.password" placeholder="password"/>
 </label>
+
+<h1>Orders</h1>
+<ul class="rew">
+  <li *ngFor="let order of orders">
+    <h3>{{order.name}},  {{order.product}}</h3>
+  </li>
+</ul>

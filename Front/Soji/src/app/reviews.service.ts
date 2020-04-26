@@ -3,7 +3,7 @@ import {Review} from './review';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-
+import { Order} from './order';
 
 @Injectable({
   providedIn: 'root'
@@ -28,4 +28,10 @@ export class ReviewsService {
       return of(result as T);
     };
   }
+  getOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.BASE_URL}/core/orders/`)
+      .pipe(catchError(this.handleError<Order[]>('getReviews', []))
+      );
+  }
+
 }

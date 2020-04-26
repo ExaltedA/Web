@@ -6,8 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status, generics
 from django.http import Http404
 from rest_framework.permissions import IsAuthenticated
-
-
+from core.filters import *
 class ProductsList(APIView):
     def get(self, request):
         products = Product.objects.all()
@@ -23,10 +22,25 @@ class ProductsList(APIView):
         return Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-class CompanyListAPIView(generics.ListCreateAPIView):
+class ProductLAPIView(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = (IsAuthenticated,)
+    # filter_backends = (filters.Search)
+
+class OrdersListAPIView(generics.ListCreateAPIView):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+    permission_classes = (IsAuthenticated,)
+
+    def get_queryset(self):
+        """
+        This view should return a list of all the purchases
+        for the currently authenticated user.
+        """
+        user = self.request.user
+        return Order.objects.filter(сustomer=user)
+
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
@@ -65,4 +79,5 @@ def reviews_list(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response({'error': serializer.errors},
-                        status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                        status=status.HTTP_500_INTERNAL_SERVER_ERROR)@api_view(['GET', 'POST'])
+
